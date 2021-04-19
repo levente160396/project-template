@@ -1,0 +1,44 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+<body>
+	<ui:composition>
+		<p:outputPanel
+			styleClass="top-bar flex align-items justify-content-center">
+			<p:outputPanel
+				styleClass="top-bar-container  flex align-items space-between">
+				<a class="top-bar-icon" href="mailto:levente160396@gmail.com"> <i
+					class="far fa-envelope"></i> #{msg['header.operation.email.address']}
+				</a>
+			<h:form onsubmit="this.action='#{request.contextPath}/logout';"
+				class="logout-form">
+				<p:commandButton styleClass="logout-button" value="#{msg['header.logout']}" ajax="false" icon="fas fa-sign-out-alt" iconPos="right"/>
+			</h:form>
+			</p:outputPanel>
+		</p:outputPanel>
+
+		<nav> <p:outputPanel id="header"
+			styleClass="nav flex align-items justify-content-center ">
+			<p:outputPanel
+				styleClass="nav-container flex align-items space-between">
+				<a  href="#{request.contextPath}/dashboard.xhtml">
+					<img class="nav-logo" src="#{request.contextPath}/images/logo.png" />
+				</a>
+				<p:outputPanel>
+					
+					<h:panelGroup rendered="#{accountBean.getRole() == 'ADMIN'}">
+						<a title="Felhasználók" class="nav-link" href="#{request.contextPath}/user.xhtml">#{msg['menu.users']}</a>
+					</h:panelGroup> 
+				</p:outputPanel>
+			</p:outputPanel>
+		</p:outputPanel> </nav>
+	</ui:composition>
+</body>
+</html>

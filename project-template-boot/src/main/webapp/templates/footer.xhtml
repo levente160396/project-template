@@ -1,0 +1,21 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+<body>
+	<ui:composition>
+		<footer> <p:outputPanel
+			styleClass="footer flex align-items space-between ">
+			<p:outputPanel styleClass="footer-text-left">#{msg['footer.title']}</p:outputPanel>
+			<p:outputPanel styleClass="footer-text-right">#{msg['footer.created']}</p:outputPanel>
+		</p:outputPanel> </footer>
+	</ui:composition>
+</body>
+</html>

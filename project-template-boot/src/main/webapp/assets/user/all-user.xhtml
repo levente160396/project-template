@@ -1,0 +1,71 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:utils="http://java.sun.com/jsf/composite/utils"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core">
+	
+	<h:form>
+		<p:outputPanel styleClass="content-content pure-g">
+			<p:outputPanel styleClass="pure-u-20-24 margin-0-auto ">
+				<p:outputPanel styleClass="pure-u-1 text-align-center title">
+					<p:outputLabel styleClass="font-weight-bold " value="#{msg['user.all-user.user.manage']}" />
+				</p:outputPanel>
+				<p:repeat id="users" value="#{userBean.users}" var="user">
+					<p:panelGrid class="main-panelgrid"
+									columns="5"
+									columnClasses="ui-g-6 ui-md-3,ui-g-6 ui-md-3,ui-g-6 ui-md-2,ui-g-6 ui-md-2,ui-g-6 ui-md-2"
+									layout="grid">
+						<p:column>
+							<p:outputPanel styleClass="text-align-center">
+									<h:outputText styleClass="panlegrid-title" value="#{msg['user.all-user.username']}"/>
+							</p:outputPanel>
+							<p:outputPanel styleClass="text-align-center">
+									<p:outputLabel value="#{user.username}"/>
+							</p:outputPanel>
+						</p:column>
+						<p:column>
+							<p:outputPanel styleClass="text-align-center">
+								<h:outputText styleClass="panlegrid-title" value="#{msg['user.all-user.name']}"/>
+							</p:outputPanel>
+							<p:outputPanel styleClass="text-align-center">
+								<p:outputLabel value="#{user.firstName} "/>
+								<p:outputLabel value="#{user.lastName}"/>
+							</p:outputPanel>
+						</p:column>
+						<p:column>
+							<p:outputPanel styleClass="text-align-center">
+								<h:outputText styleClass="panlegrid-title" value="#{msg['user.all-user.email.address']}"/>
+							</p:outputPanel>
+							<p:outputPanel styleClass="text-align-center">
+								<p:outputLabel value="#{user.email}"/>
+							</p:outputPanel>
+						</p:column>
+						<p:column>
+							<p:outputPanel styleClass="text-align-center">
+								<h:outputText styleClass="panlegrid-title" value="#{msg['user.all-user.permission']}"/>
+							</p:outputPanel>
+							<p:outputPanel styleClass="text-align-center">
+								<p:outputLabel value="#{user.role}"/>
+							</p:outputPanel>
+						</p:column>
+						<p:column>
+							<p:commandButton id="edit" styleClass="edit" value=" " type="button" icon="fa fa-ellipsis-v"/>
+							<p:overlayPanel  for="edit" hideEffect="fade">
+								<p:commandButton styleClass="edit-overlay-button"
+										actionListener="#{userController.editUser(user.id)}"
+										value="#{msg['user.all-user.edit']}"  update="user-container" icon="fas fa-pencil-alt" style="color:rgba(47,103,249)"/>
+								<p:outputPanel>
+									<p:commandButton styleClass="edit-overlay-button"
+											actionListener="#{userController.deleteUser(user.id)}"
+											value="#{msg['user.all-user.delete']}"  update="user-container" icon="fas fa-pencil-alt" style="color:red"/>
+								</p:outputPanel>	
+							</p:overlayPanel>
+						</p:column>
+					</p:panelGrid>
+				</p:repeat>
+			</p:outputPanel>
+		</p:outputPanel>
+	</h:form>
+</ui:composition>

@@ -1,0 +1,3 @@
+function disableAjaxLoader() {
+	isAjaxLoaderDisabled = true;
+}

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+	<changeSet id="1" author="szabol">
+		<sql>
+			create table USER (
+			id bigint not null auto_increment,
+			email varchar(50) not null,
+			first_name varchar(50),
+			is_active bit,
+			last_login datetime(6),
+			last_name varchar(50),
+			password varchar(255),
+			role varchar(255) not null,
+			username varchar(255) not null,
+			primary key (id)
+			) engine=InnoDB;
+
+			alter table USER
+			add constraint UK_637897s7n6jsejgjomfdxva57 unique (email);
+
+			alter table USER
+			add constraint UK_nnxlvn4smsqyy1x7d0ccr6ked unique (username);
+
+			INSERT INTO
+			USER
+			(ID,
+			USERNAME,FIRST_NAME,LAST_NAME,EMAIL,PASSWORD,IS_ACTIVE,ROLE)
+			VALUES
+			(1,'superuser', 'super', 'user', '-',
+			'$2y$12$ARwsBCabkV7tPBtZBhKnkuK/GqvGayATwKG81WQINaROCLzvvyEcG', TRUE,
+			'ADMIN');
+
+		</sql>
+	</changeSet>
+	<changeSet id="2" author="szabol">
+		<sql>
+		
+		create table measure (
+	       id bigint not null auto_increment,
+	       	name varchar(255),
+	        rec_date datetime,
+	        patient_fk bigint,
+	        primary key (id)
+	    ) engine=InnoDB;
+	
+	    create table measure_data (
+	       id bigint not null auto_increment,
+	        rec_date datetime,
+	        value double precision,
+	        measure_fk bigint,
+	        primary key (id)
+	    ) engine=InnoDB;
+	
+	    create table patient (
+	       id bigint not null auto_increment,
+	        name varchar(255),
+	        social_security_card varchar(255),
+	        primary key (id)
+	    ) engine=InnoDB;
+	
+	    alter table patient
+	       add constraint UK_atqbn5kd2m8ch27cs6vxc47kc unique (social_security_card);
+	
+	    alter table measure 
+	       add constraint FK4trc5giyedk3m7xg1wi78hjnp 
+	       foreign key (patient_fk) 
+	       references patient (id);
+	
+	    alter table measure_data 
+	       add constraint FK83g4cw8l746ffdwtw7jscmcvt 
+	       foreign key (measure_fk) 
+	       references measure (id);
+		</sql>
+	</changeSet>
+</databaseChangeLog>

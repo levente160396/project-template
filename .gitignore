@@ -1,0 +1,12 @@
+*.log
+*.log.*
+*.exc
+*.project
+*.classpath
+*.prefs
+
+**/target/*
+**/java-generated/*
+/live-monitoring-webapp/.tern-project
+/live-monitoring-webapp/.settings/org.eclipse.wst.common.component
+/live-monitoring-webapp/.settings/org.eclipse.wst.common.project.facet.core.xml

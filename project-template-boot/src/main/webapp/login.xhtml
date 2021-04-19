@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+		<title>#{msg['header.title']}</title>
+		<link rel="shortcut icon"
+			href="#{request.contextPath}/images/favicon.ico" type="image/png" />
+		 <link rel="stylesheet" type="text/css" href="css/theme.css" />
+		  <link rel="stylesheet" type="text/css" href="css/login.css" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	    <link
+	      rel="stylesheet"
+	      href="https://unpkg.com/purecss@1.0.1/build/pure-min.css"
+	      integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47"
+	      crossorigin="anonymous"/>
+	    <f:loadBundle basename="hu.pain.messages" var="msg"/>
+	    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	</h:head>
+	
+	<h:body>
+	
+	    <div class="top-bar flex align-items justify-content-center">
+	      <div class="top-bar-container  flex align-items space-between">
+	        <a class="top-bar-icon" href="mailto:levente160396@gmail.com">
+	          <i class="far fa-envelope"></i>
+	        	 #{msg['header.operation.email.address']}
+	        </a>
+	      </div>
+	    </div>
+	
+		<p:outputPanel id="login-container" class="login-container">
+		    <h:form id="login" prependId="false">
+			    <p:outputPanel styleClass="message-container">
+			    	<p:messages />
+			    </p:outputPanel>
+			    <p:outputPanel styleClass="login-page text-align-center">
+			        <p:outputPanel styleClass="login-title">#{msg['login.title']}</p:outputPanel>
+			        <p:outputPanel styleClass="username">
+			            <p:inputText id="username" styleClass="username-input" 
+			             placeholder="#{msg['login.username.placeholder']}" required="true" 
+			            requiredMessage="#{msg['login.username.requiredMessage']}"/>
+			        </p:outputPanel>
+			        <p:outputPanel class="password">
+			            <p:password id="password" styleClass="password-input" 
+			            placeholder="#{msg['login.password.placeholder']}" 
+			            required="true" 
+			            requiredMessage="#{msg['login.password.requiredMessage']}"/>
+			        </p:outputPanel>
+			        <p:outputPanel styleClass="login-button-container">
+				        <p:outputPanel style="margin-bottom:5px;">
+				            <p:commandButton class="login-button" process="@this" ajax="false" value="#{msg['login.login']}" />
+			            </p:outputPanel>
+			        </p:outputPanel>
+			    </p:outputPanel>
+		    </h:form>
+		    
+		</p:outputPanel>
+
+	    <footer>
+	      <p:outputPanel styleClass="footer flex align-items space-between ">
+	        <p:outputPanel styleClass="footer-text-left">#{msg['footer.title']}</p:outputPanel>
+	        <p:outputPanel styleClass="footer-text-right">#{msg['footer.created']}</p:outputPanel>
+	      </p:outputPanel>
+	    </footer>
+	</h:body>
+</html>

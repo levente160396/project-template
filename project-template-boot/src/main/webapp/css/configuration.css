@@ -1,0 +1,39 @@
+.ui-state-default.create-button {
+  color: #ffffff;
+  background-color: #404757;
+  background: #404757;
+  border: none;
+  letter-spacing:2px;
+  font-weight:normal;
+  border-radius: 15px;
+  font-size: 18px;
+  padding: 10px 15px;
+  line-height: 120%;
+  outline: none; 
+}
+
+.ui-state-default.create-button:hover {
+  background-color: #565f74;
+  -webkit-box-shadow: 0px 0px 8px #565f74;
+  box-shadow: 0px 0px 8px #565f74;
+}
+
+.ui-state-default.ui-inputfield {
+    padding: 10px 0px 10px 20px;
+    border: 0;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    max-width: 300px;
+}
+
+.ui-inputfield.ui-state-focus {
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.ui-inputfield.ui-state-focus, .ui-widget-content .ui-inputfild.ui-state-focus {
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4) !important;
+}
+
+.ui-inputfield, .ui-widget-content .ui-inputfield, .ui-widget-header .ui-inputfield {
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4);
+}

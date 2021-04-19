@@ -1,0 +1,129 @@
+/*projects-content*/
+.ui-panelgrid {
+	width: 100%;
+}
+
+.ui-panelgrid .ui-panelgrid-cell {
+    border: 0;
+}
+
+.margin-left {
+  margin-left: 10px;
+}
+
+.projects-content {
+  padding-top: 60px;
+  margin-bottom: 150px;
+}
+
+.project-container {
+  border: solid 1px rgba(229,229,229);
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  margin-bottom:30px; 
+  border-radius: 20px;
+}
+
+
+.ui-accordion .ui-accordion-header {
+    cursor: pointer;
+    border-radius:3px;
+    position: relative;
+    margin-top: 1px;
+    min-height: 0;
+    padding: .5em .5em .5em 2.2em;
+    background-color: var(--footer-and-background);
+    background:linear-gradient(to bottom right, var(--footer-and-background), rgba(128,128,128)); ;
+    color: white;
+}
+
+.data-table {
+	margin: 0 auto;
+    width: 70%;
+}
+
+.ui-helper-reset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    line-height: 1;
+    text-decoration: none;
+    font-size: 100%;
+    list-style: none;
+}
+
+.center-position {
+    align-content: center;
+    text-align: center;
+}
+
+.edit-button {
+	min-width: 115px;
+	border-radius: 5px;
+	padding: 6px 0px;
+	border: none;
+	color: #ffffff;
+	background: #e81c73;
+	background-color: #e81c73;
+	text-transform: uppercase;
+	font-weight: normal;
+	letter-spacing: 2px;
+}
+
+.edit-button:hover {
+  background-color: #ed4a90;
+  background: #ed4a90;
+  transition: all 0.4s;
+}
+.edit-button-container {
+	margin-left: 50px; 
+}
+.project-title {
+  font-size: 20px;
+  padding-bottom: 20px;
+  padding-top:30px;
+  font-weight: bold;
+}
+
+.project-deteils-cell > span {
+  margin-right: 5px;
+}
+
+.projects-title {
+  color: #333333;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-bottom: 20px;
+  padding-top: 40px;
+}
+
+.create-project-title-container .create-project-title {
+	font-size: 32px;
+	font-weight: bold;
+}
+
+.count-container {
+	margin-bottom: 40px;
+}
+.panel {
+   border-radius: 5px;
+    padding:20px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4);
+    margin-bottom: 20px;
+    box-sizing: content-box;
+}
+.header{
+	margin-right:120px;
+	padding: 20px;
+}
+
+.email-input {
+	max-width: 250px;
+}
+
+.meter-gauge {
+	width: 280px;
+	height: 200px;
+}

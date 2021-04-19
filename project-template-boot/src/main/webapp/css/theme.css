@@ -1,0 +1,462 @@
+/*css variables*/
+:root {
+  --footer-and-background: rgb(37, 37, 37);
+  --myApp-pink: #E33C17;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-right {
+ text-align: right;
+}
+
+.margin-0-auto {
+  margin: 0 auto;
+}
+
+.margin-bottom-50px {
+	margin-bottom: 50px;
+}
+
+.margin-bottom-30px {
+	margin-bottom: 30px;
+}
+.margin-top-50px {
+	margin-top: 50px;
+}
+.margin-top-30px {
+	margin-top: 30px;
+}
+.padding-20px{
+	padding: 20px;
+}
+
+.margin-top-18vh {
+	margin-top: 18vh;
+}
+
+.pink {
+	color: var(--myApp-pink);
+}
+
+.ui-outputpanel .ui-widget .title {
+	font-size: 33px;
+	margin-bottom: 50px;
+}
+
+/*flex*/
+.flex {
+  display: flex;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+.space-around {
+	justify-content: space-around;
+}
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-flex-end {
+  justify-content: flex-end;
+}
+
+.align-items {
+  align-items: center;
+}
+
+
+/*font*/
+.font-weight-bold {
+  font-weight: bold;
+}
+
+/*footer*/
+.footer {
+  z-index:9;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background-color: var(--footer-and-background);
+  color: white;
+  text-align: center;
+}
+
+.footer-text-left {
+  margin-left: 20px;
+}
+
+.footer-text-right {
+  margin-right: 20px;
+}
+
+/*top-bar*/
+.top-bar {
+  z-index:6;
+  position: fixed;
+  width: 90vw;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  background-color: var(--footer-and-background);
+  color: white;
+  text-align: center;
+}
+
+.top-bar-container {
+  width: 90vw;
+}
+
+.top-bar-icon {
+  margin-right: 15px;
+  color: white;
+  text-decoration: none;
+  font: inherit;
+}
+
+.top-bar-icon:hover {
+  color: var(--myApp-pink);
+  transition: all 0.4s;
+}
+
+/*nav*/
+.nav-container {
+  width: 90vw;
+}
+.nav {
+  position: relative;
+  margin-top: 40px;
+  z-index: 5;
+  background-color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  -webkit-box-shadow: 0px -15px 30px rgba(51, 51, 51, 0.7);
+  -moz-box-shadow: 0px -15px 30px rgba(51, 51, 51, 0.7);
+  -o-box-shadow: 0px -15px 30px rgba(51, 51, 51, 0.7);
+  box-shadow: 0px -15px 30px rgba(51, 51, 51, 0.7);
+}
+.nav-link {
+  padding: 20px 10px;
+  transition: all 0.5s;
+  font-weight: 600;
+  color: #404757;
+  text-transform: uppercase;
+  outline: none;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: var(--myApp-pink);
+  transition: all 0.4s;
+}
+
+.nav-logo {
+  max-height: 50px;
+  transition: all 0.4s;
+}
+
+.nav-logo:hover {
+  transform: scale(1.05);
+}
+
+.ui-inputfield {
+	padding: 10px 0px 10px 20px;
+    border: 0;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+}
+.ui-state-error {
+	border: none;
+}
+
+.ui-inputfield.ui-state-error {
+	border: 1px solid red;
+	border-radius: 5px;
+}
+
+.ui-inputfield.ui-state-focus {
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.ui-selectonemenu label.ui-selectonemenu-label {
+	padding-left: 5px;
+}
+
+
+.create-button {
+  color: #ffffff;
+  background-color: #404757;
+  background: #404757;
+  border: none;
+  letter-spacing:2px;
+  font-weight:normal;
+  border-radius: 15px;
+  font-size: 18px;
+  padding: 10px 15px;
+  line-height: 120%;
+  outline: none; 
+}
+
+.create-button:hover {
+  background-color: #565f74;
+  -webkit-box-shadow: 0px 0px 8px #565f74;
+  box-shadow: 0px 0px 8px #565f74;
+}
+.delete-button {
+    letter-spacing: 2px;
+	color:white;
+	font-weight:normal;
+	padding: 3px 5px;
+	border-radius: 10px;
+	background-color: #cb0000;
+	background: #cb0000;
+	border: none;
+}
+
+.delete-button:hover {
+	background:#FE0001;
+	background-color: #FE0001;
+	box-shadow: 0px 0px 8px #FE0001;
+}
+.ui-state-focus {
+	box-shadow: none;
+}
+
+.content-content {
+  padding-top: 60px;
+  margin-bottom: 150px
+}
+
+.ui-commandlink .ui-widget .back-link {
+	color: #e81c73;
+}
+.back-container .back-link {
+	color:#e81c73;
+	text-decoration: none;
+}
+.back-container .back-link:hover {
+	text-decoration: underline;
+}
+
+.fa-angle-left:before {
+	margin-right: 5px;
+	color: #e81c73;
+}
+.ajax-loader-dialog {
+	box-shadow: none;
+	background-color: transparent;
+}
+.ajax-loader-dialog .ui-dialog-content {
+	border: none;
+	background-color: transparent;
+	
+}
+.ui-widget-content {
+	border: 0;
+}
+.ui-selectonemenu {
+	min-width: 215px !important;
+}
+
+.main-panelgrid .ui-g{
+	margin-bottom: 10px;
+	border: solid 1px rgba(229,229,229);
+	border-radius:5px;
+	background-color: #fff;
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+}
+.ui-button-text-icon-left .ui-button-text {
+	padding: 0px;
+}
+.edit-overlay-button {
+    font-size: 14px;
+    padding: 10px;
+    float: left;
+    color: #000;
+    border-radius: 0px;
+    background-color: #fff;
+    background-image: none;
+    min-width: 200px;
+}
+
+.ui-overlaypanel-content {
+	padding: 0px;
+}
+.edit-overlay-button:hover {
+	color:rgba(47,103,249);
+	background-color: rgba(237,237,237);
+}
+.panlegrid-title {
+	color: rgba(168,173,179);
+    font-size: 15px;
+    padding-bottom: 5px;
+}
+
+.ui-widget-content {
+	color: #000;
+}
+.fa-ellipsis-v:before {
+	color: #000;
+}
+
+.delete-overlay-button:hover {
+	color: red;
+}
+.fa-exclamation-triangle:before {
+	font-size: 14px;
+}
+.ui-dialog .ui-dialog-buttonpane button{
+	color: #ffffff;
+    background-color: #404757;
+    background: #404757;
+    font-weight: 400;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+.ui-dialog .ui-dialog-buttonpane button:hover {
+	background-color: #565f74;
+	-webkit-box-shadow: 0px 0px 8px #565f74;
+	box-shadow: 0px 0px 8px #565f74;
+}
+.ui-dialog .ui-dialog-buttonpane button:active { 
+	text-shadow: none;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+	background: linear-gradient(to bottom right,#404757, rgba(128,128,128));
+}
+.ui-dialog .ui-dialog-title {
+	color: white;
+	font-weight: 400;
+}
+.title {
+	font-size: 32px;
+	font-weight: bold;
+}
+
+.fa-question-circle:before {
+	color: #000;
+}
+
+.logout-button {
+	color: white;
+    background: rgba(37,37,37);
+    background-color: rgba(37,37,37);
+    border: none;
+    text-shadow: none;
+    box-shadow: none;
+    border-width: 0px;
+    font-weight: normal;
+}
+
+.logout-button:hover {
+	color: var(--myApp-pink);
+    transition: all 0.4s;
+}
+
+.logout-button:active{
+	border: none;
+	border-color: transparent;
+	border-width: 0px;
+}
+
+.email-text {
+	height:100px;
+	min-width:350px;
+	max-height: 325px;
+	overflow-x: hidden;
+    overflow-wrap: break-word;
+}
+
+.header-menu-button .fa-ellipsis-v{
+	margin-bottom: 10px;
+}
+
+.fa-sign-out-alt:before {
+	font-size: 16px;
+}
+
+.ui-tabs .ui-tabs-nav {
+	background: #252525 -webkit-gradient(linear,left top,left bottom,from(rgba(96, 96, 96,0.9)),to(rgba(37, 37, 37,0)));
+}
+
+.ui-tabs {
+	padding: 0px;
+}
+
+.ui-datepicker {
+	border: 1px solid #a8a8a8;
+	padding: 0px;
+}
+
+.main-autocomplete .ui-autocomplete-multiple-container{
+	padding: 10px 0px 10px 20px;
+	max-width: 300px;
+}
+
+.ui-autocomplete-input-token input{
+	min-width: 280px;
+}
+
+.main-selectCheckboxMenu {
+	min-width: 235px;
+}
+
+.main-selectCheckboxMenu .ui-selectcheckboxmenu-multiple-container {
+	padding: 10px 0px 10px 20px;
+}
+
+.tooltip-container {
+	position:relative;
+	left:30px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(96,96,96); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.identification-box {
+	border: 1px solid #efefef;
+	padding: 5px;
+	background:#efefef;
+	border-radius: 4px;
+}
+
+body .ui-slider {
+	background:#dee2e6;
+}
+.ui-slider .ui-slider-handle {
+	border-radius: 50%;
+	background-color:red;
+}
+
+.ui-slider .ui-slider-handle {
+	width:1.7em;
+	height: 1.7em;
+}

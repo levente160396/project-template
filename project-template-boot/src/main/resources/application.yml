@@ -1,0 +1,20 @@
+spring:
+    application:
+        name: pain-measure
+    jpa:
+        properties:
+            hibernate:
+                format_sql: true
+                id:
+                    new_generator_mappings: false
+            javax:
+                persistence:
+                    schema-generation:
+                        scripts:
+                            action: update
+                            create-target: mysql-schema.sql
+        hibernate:
+            ddl-auto: update
+            dialect: org.hibernate.dialect.MySQL8InnoDBDialect
+    liquibase:
+        change-log: classpath:/db/changelog/db.changelog-master.xml

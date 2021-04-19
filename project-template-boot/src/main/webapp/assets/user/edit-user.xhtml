@@ -1,0 +1,68 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:utils="http://java.sun.com/jsf/composite/utils"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core">
+	
+	<h:form id="userGrowl">
+		<p:growl id="growl" />
+	</h:form>
+	<h:form>
+		<p:outputPanel styleClass="content-content pure-g">
+			<p:outputPanel styleClass="pure-u-20-24 margin-0-auto">
+				<p:outputPanel styleClass="back-container ">
+					<i class="fas fa-angle-left"></i>
+					<p:commandLink styleClass="back-link" value="#{msg['user.edit-user.back']}"
+							actionListener="#{userController.backAllUser()}"
+							update="user-container" immediate="true"/>
+				</p:outputPanel>
+				<p:outputPanel styleClass=" text-align-center margin-bottom-50px">
+					<p:outputPanel styleClass="title-container ">
+						<p:outputLabel styleClass="title" value="#{msg['user.edit-user.title']}" />
+					</p:outputPanel>
+				</p:outputPanel>
+				<p:outputPanel styleClass="pure-u-1-2 flex space-between align-items margin-bottom-30px">
+					<p:outputLabel styleClass="font-weight-bold" value="#{msg['user.edit-user.username']}" />
+					<p:inputText required="true" requiredMessage="#{msg['user.edit-user.username.requiredMessage']}" value="#{userBean.userSaveVO.username}"  />   
+				</p:outputPanel>
+				<p:outputPanel styleClass="pure-u-1-2 flex space-between align-items margin-bottom-30px">
+					<p:outputLabel styleClass="font-weight-bold" value="#{msg['user.edit-user.username.permission']}" />
+						<p:selectOneMenu value="#{userBean.userSaveVO.role}">
+							<f:selectItems value="#{userBean.roles}" />
+						</p:selectOneMenu>
+				</p:outputPanel>
+				<p:outputPanel styleClass="pure-u-1-2 flex space-between align-items margin-bottom-30px">
+					<p:outputLabel styleClass="font-weight-bold" value="#{msg['user.edit-user.first.name']}" />
+					<p:inputText value="#{userBean.userSaveVO.firstName}"  required="true" requiredMessage="#{msg['user.edit-user.first.name.requiredMessage']}"/>   
+				</p:outputPanel>
+				<p:outputPanel styleClass="pure-u-1-2 flex space-between align-items margin-bottom-30px">
+					<p:outputLabel styleClass="font-weight-bold" value="#{msg['user.edit-user.last.name']}" />
+					<p:inputText value="#{userBean.userSaveVO.lastName}"  required="true" requiredMessage="#{msg['user.edit-user.last.name.requiredMessage']}"/>   
+				</p:outputPanel>
+				<p:outputPanel styleClass="pure-u-1-2 flex space-between align-items margin-bottom-30px">
+					<p:outputLabel styleClass="font-weight-bold" value="#{msg['user.edit-user.email.address']}" />
+					<p:inputText value="#{userBean.userSaveVO.email}" required="true" requiredMessage="#{msg['user.edit-user.email.address.requiredMessage']}" />   
+				</p:outputPanel>
+				<p:outputPanel rendered="#{userBean.userSaveVO.modifyId == null}" styleClass="pure-u-1-2 flex space-between align-items margin-bottom-30px">
+					<p:outputLabel styleClass="font-weight-bold" value="#{msg['user.edit-user.password']}" />
+					<p:password  value="#{userBean.userSaveVO.password}"  required="true" requiredMessage="#{msg['user.edit-user.password.requiredMessage']}"/>   
+				</p:outputPanel>
+				<p:outputPanel rendered="#{userBean.userSaveVO.modifyId == null}" styleClass="pure-u-1-2 flex space-between align-items margin-bottom-30px">
+					<p:outputLabel styleClass="font-weight-bold" value="#{msg['user.edit-user.password.checker']}" />
+					<p:password  value="#{userBean.passwordChecker}" required="true" requiredMessage="#{msg['user.edit-user.password.checker.requiredMessage']}"/>   
+				</p:outputPanel>
+				<p:outputPanel styleClass="pure-u-1-2 flex space-between align-items margin-bottom-30px">
+					<p:outputLabel styleClass="font-weight-bold" value="#{msg['user.edit-user.activite']}" />
+					<p:selectBooleanCheckbox value="#{userBean.userSaveVO.isActive}" itemLabel=" "/>
+				</p:outputPanel>
+				<p:outputPanel
+						styleClass="pure-u-1-2 flex justify-content-flex-end align-items">
+					<p:commandButton styleClass="create-button" value="#{msg['user.edit-user.save']}" 
+									update="user-container :userGrowl" actionListener="#{userController.saveUser()}"/>
+				</p:outputPanel>
+			</p:outputPanel>
+		</p:outputPanel>
+	</h:form>
+</ui:composition>
